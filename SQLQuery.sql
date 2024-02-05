@@ -1,0 +1,25 @@
+CREATE DATABASE SchoolDB
+USE SchoolDB
+
+
+CREATE TABLE Class (
+    ClassId INT PRIMARY KEY IDENTITY not null,
+    ClassName NVARCHAR(100)
+);
+
+CREATE TABLE Subject (
+    SubjectId INT PRIMARY KEY IDENTITY,
+    Name NVARCHAR(100),
+    Description NVARCHAR(MAX)
+);
+
+CREATE TABLE Student (
+    StudentId INT PRIMARY KEY IDENTITY,
+    Name NVARCHAR(100),
+    Age INT,
+    ClassId INT FOREIGN KEY REFERENCES Class(ClassId)
+);
+
+SELECT * FROM Student
+SELECT * FROM Subject
+SELECT * FROM Class
